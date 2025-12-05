@@ -103,7 +103,7 @@ li { margin-bottom: 8px; }
 
 /* Individual Category Box */
 .course-category {
-    background-color: var(--card-bg); /* Uses the variable we defined earlier */
+    background-color: var(--bg-color); /* Uses the variable we defined earlier */
     padding: 25px;
     border: 1px solid #333;
     border-radius: 8px; /* Rounded corners */
