@@ -125,6 +125,81 @@ p { margin-bottom: 30px; color: var(--text-light); }
 /* Since 5 columns is very tight on tablets/phones,
    we stack them when the screen gets too small.
 */
+
+/* 1. The Container: Forces the 5 columns */
+.course-grid {
+    display: grid;
+    /* This command strictly enforces 5 equal columns side-by-side */
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 20px; /* Space between the cards */
+    width: 100%;
+    align-items: start; /* Aligns cards to the top */
+}
+
+/* 2. The Card Style (Matches your screenshot) */
+.course-category {
+    background: #ffffff;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* Soft shadow */
+    border-top: 5px solid #5c9cea; /* The Blue Top Border */
+    overflow: hidden;
+    height: 100%; /* Makes all cards the same height if desired */
+}
+
+/* 3. The Header "Mathematics", "Physics", etc. */
+.course-category h3 {
+    color: #2c3e50;
+    padding: 20px;
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    border-bottom: 1px solid #eee; /* Faint line under title */
+}
+
+/* 4. The List Items */
+.course-list {
+    list-style: none; /* Remove default bullets */
+    padding: 0;
+    margin: 0;
+}
+
+.course-list li {
+    padding: 12px 20px;
+    border-bottom: 1px solid #f0f0f0; /* The separator lines */
+    color: #444;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+/* 5. The Blue Dot (Bullet point) */
+.course-list li::before {
+    content: "•";
+    color: #5c9cea; /* Match the blue top border */
+    font-weight: bold;
+    margin-right: 10px;
+    font-size: 1.2em;
+    line-height: 1; /* Fixes vertical alignment of dot */
+}
+
+.course-list li:last-child {
+    border-bottom: none; /* Remove border from the very last item */
+}
+
+/* --- RESPONSIVE HANDLER --- */
+/* IMPORTANT: On small screens (tablets/phones), 5 columns will look bad.
+   This forces it to scroll sideways instead of stacking, 
+   keeping your "horizontal" requirement. */
+@media (max-width: 1200px) {
+    .course-grid {
+        display: flex;
+        overflow-x: auto; /* Adds a horizontal scrollbar */
+        padding-bottom: 20px; /* Space for the scrollbar */
+    }
+    .course-category {
+        min-width: 300px; /* Ensures cards don't get squashed */
+    }
+}
 @media (max-width: 1024px) {
     .course-grid {
         grid-template-columns: repeat(3, 1fr); /* 3 columns on tablets */
