@@ -3,252 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Curriculum Vitae</title>
+    <title>Thang Hoang Clone - Home</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        /* --- CSS VARIABLES (Change colors here) --- */
-        :root {
-            --bg-color: #111111;       /* Dark Background */
-            --card-bg: #1a1a1a;        /* Slightly lighter for sidebar (optional) */
-            --text-main: #e0e0e0;      /* Main text color */
-            --text-muted: #a0a0a0;     /* Date/secondary text color */
-            --accent-color: #d4a373;   /* Gold/Tan accent (like Image 1) */
-            --link-color: #61dafb;     /* Blue link color (like Image 2) */
-            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        /* --- GLOBAL RESET --- */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: var(--font-main);
-            line-height: 1.6;
-            display: flex;
-            justify-content: center;
-        }
-
-        /* --- LAYOUT CONTAINER --- */
-        .container {
-            display: grid;
-            grid-template-columns: 300px 1fr; /* Sidebar fixed 300px, Content fills rest */
-            max-width: 1200px;
-            width: 100%;
-            min-height: 100vh;
-        }
-
-        /* --- SIDEBAR (Left) --- */
-        .sidebar {
-            padding: 40px;
-            text-align: center; /* Centers photo and name */
-            position: sticky;
-            top: 0;
-            height: 100vh;
-            overflow-y: auto;
-        }
-
-        .profile-photo {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%; /* Makes it circular */
-            object-fit: cover;
-            border: 3px solid var(--accent-color);
-            margin-bottom: 20px;
-            background-color: #333; /* Placeholder color */
-        }
-
-        .name {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: var(--accent-color);
-        }
-
-        .role {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            margin-bottom: 30px;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            font-size: 1.5rem;
-        }
-
-        .social-links a {
-            color: var(--text-main);
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: var(--accent-color);
-        }
-
-        /* --- MAIN CONTENT (Right) --- */
-        .main-content {
-            padding: 50px;
-            border-left: 1px solid #333; /* Divider line */
-        }
-
-        /* NAVIGATION (Top right) */
-        .nav {
-            margin-bottom: 40px;
-            text-align: right;
-        }
-        .nav a {
-            color: var(--text-main);
-            text-decoration: none;
-            margin-left: 20px;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-        .nav a:hover {
-            color: var(--accent-color);
-        }
-
-        /* SECTIONS */
-        section {
-            margin-bottom: 60px;
-        }
-
-        h2 {
-            font-size: 1.8rem;
-            border-bottom: 2px solid #333;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            color: var(--text-main);
-        }
-
-        p {
-            margin-bottom: 15px;
-        }
-
-        a {
-            color: var(--link-color);
-            text-decoration: none;
-        }
-        
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* LISTS (Interests/Education) */
-        ul {
-            list-style-position: inside;
-            margin-left: 10px;
-        }
-        
-        li {
-            margin-bottom: 8px;
-        }
-
-        /* EDUCATION ITEM STYLING */
-        .edu-item {
-            margin-bottom: 20px;
-        }
-        .edu-school {
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-        .edu-date {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            float: right; /* Puts date on the right */
-        }
-        .edu-degree {
-            font-style: italic;
-            color: var(--accent-color);
-        }
-
-        /* --- MOBILE RESPONSIVENESS --- */
-        @media (max-width: 768px) {
-            .container {
-                grid-template-columns: 1fr; /* Stack vertically */
-            }
-            .sidebar {
-                position: relative;
-                height: auto;
-                border-bottom: 1px solid #333;
-            }
-            .main-content {
-                border-left: none;
-                padding: 30px;
-            }
-            .nav {
-                text-align: center;
-            }
-            .edu-date {
-                float: none;
-                display: block;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div class="container">
-        
         <aside class="sidebar">
             <img src="profile_placeholder.jpg" alt="Profile Photo" class="profile-photo">
-            
             <h1 class="name">Your Name</h1>
             <p class="role">Undergraduate Researcher<br>EE & Mathematics</p>
-            
             <div class="social-links">
-                <a href="mailto:your.email@university.edu" title="Email"><i class="fas fa-envelope"></i></a>
-                <a href="https://github.com/yourusername" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/yourusername" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="#" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
             </div>
         </aside>
 
         <main class="main-content">
-            
             <nav class="nav">
-                <a href="#about">Home</a>
-                <a href="#research">Research</a>
-                <a href="#publications">Publications</a>
-                <a href="#cv">CV / Resume</a>
+                <a href="index.html" class="active">Home</a>
+                <a href="research.html">Research</a>
+                <a href="cv.html">CV</a>
             </nav>
 
-            <section id="about">
+            <section>
                 <h2>About Me</h2>
                 <p>
-                    I am a double degree undergraduate student studying <strong>Electrical Engineering</strong> and <strong>Mathematics</strong>. 
+                    I am a double degree undergraduate student studying <strong>Electrical Engineering</strong> and <strong>Mathematics</strong>.
+                    I plan to pursue a PhD in <strong>Applied Physics</strong>.
                 </p>
                 <p>
-                    I plan to pursue a PhD in <strong>Applied Physics</strong>. I am particularly interested in the mathematical and physical properties of waves, signal processing, and information theory.
+                    My research focuses on the properties of waves (both mechanical and electromagnetic) and signal processing.
                 </p>
             </section>
-
-            <section id="research">
-                <h2>Research Interests</h2>
-                <ul>
-                    <li><strong>Applied Physics:</strong> Wave mechanics, Electromagnetism, Thermodynamics.</li>
-                </ul>
-            </section>
-
-            <section id="education">
-                <h2>Education</h2>
-                
-                <div class="edu-item">
-                    <span class="edu-date">Expected May 2026</span>
-                    <div class="edu-school">Your University Name</div>
-                    <div class="edu-degree">B.S. Electrical Engineering & B.S. Mathematics</div>
-                </div>
-
-                </section>
-
-            <section id="news">
+            
+            <section>
                 <h2>News</h2>
                 <ul>
-                    <li><strong>Summer 2
+                    <li><strong>Nov 2025:</strong> Working on Honors contract reflection.</li>
+                    <li><strong>Oct 2025:</strong> Started drafting thesis on Signal Propagation.</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
