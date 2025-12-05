@@ -2,15 +2,25 @@
   --bg: #000000;
   --bg-alt: #050505;
   --card-bg: #050505;
-  --border-subtle: #333333;
+  --border-subtle: #262626;
 
-  --accent: #0000ff;       /* orange for highlights */
+  /* Accent palette (only purple, red, green + shades) */
+  --accent: #a855f7;          /* main accent: purple */
   --accent-soft: #111111;
-  --accent-strong: #0000ff;
+  --accent-strong: #c4b5fd;   /* light purple */
+
+  --green: #22c55e;
+  --green-dark: #15803d;
+
+  --red: #ef4444;
+  --red-dark: #b91c1c;
+
+  --purple: #a855f7;
+  --purple-dark: #7e22ce;
 
   --text-main: #ffffff;
-  --text-muted: #ffffff;
-  --text-soft: #ffffff;
+  --text-muted: #b3b3b3;
+  --text-soft: #8c8c8c;
 
   --radius-lg: 1rem;
   --radius-pill: 999px;
@@ -56,7 +66,7 @@ body {
 
 .site-header {
   border-bottom: 1px solid var(--border-subtle);
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.95);
   position: sticky;
   top: 0;
   z-index: 50;
@@ -190,7 +200,7 @@ body {
 }
 
 .button.primary:hover {
-  background: #111111;
+  background: var(--accent-soft);
 }
 
 .button.ghost:hover {
@@ -240,20 +250,21 @@ body {
   background: transparent;
 }
 
+/* Track colors: purple, red, green only */
 .pill-math {
-  border-color: #a855f7;
+  border-color: var(--purple);
 }
 
 .pill-physics {
-  border-color: #fb923c;
+  border-color: var(--red);
 }
 
 .pill-ee {
-  border-color: #22c55e;
+  border-color: var(--green);
 }
 
 .pill-misc {
-  border-color: #38bdf8;
+  border-color: var(--accent); /* also purple-family */
 }
 
 /* Sections */
@@ -356,20 +367,22 @@ body {
   margin: 0 0 0.35rem;
 }
 
+/* Track borders using purple/red/green */
+
 .summary-math {
-  border-color: #a855f7;
+  border-color: var(--purple);
 }
 
 .summary-physics {
-  border-color: #fb923c;
+  border-color: var(--red);
 }
 
 .summary-ee {
-  border-color: #22c55e;
+  border-color: var(--green);
 }
 
 .summary-misc {
-  border-color: #38bdf8;
+  border-color: var(--border-subtle); /* neutral */
 }
 
 /* Tabs */
@@ -403,7 +416,7 @@ body {
 }
 
 .tab-button.active {
-  background: #111111;
+  background: var(--accent-soft);
   color: var(--accent-strong);
 }
 
@@ -440,7 +453,7 @@ body {
   width: 0.55rem;
   height: 0.55rem;
   border-radius: 999px;
-  background: var(--accent);
+  background: var(--accent); /* purple dot */
 }
 
 .term-block h4 {
