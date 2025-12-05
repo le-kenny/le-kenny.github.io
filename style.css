@@ -4,13 +4,13 @@
   --card-bg: #050505;
   --border-subtle: #333333;
 
-  --accent: #f97316;       /* orange for highlights */
+  --accent: #0000ff;       /* orange for highlights */
   --accent-soft: #111111;
-  --accent-strong: #fb923c;
+  --accent-strong: #0000ff;
 
   --text-main: #ffffff;
-  --text-muted: #b3b3b3;
-  --text-soft: #8c8c8c;
+  --text-muted: #ffffff;
+  --text-soft: #ffffff;
 
   --radius-lg: 1rem;
   --radius-pill: 999px;
