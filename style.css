@@ -2,9 +2,9 @@
 
 /* CSS VARIABLES */
 :root {
-    --bg-color: #111111;
+    --bg-color: #FFFFFF;
     --card-bg: #1a1a1a;
-    --text-main: #e0e0e0;
+    --text-main: #000000;
     --text-muted: #a0a0a0;
     --accent-color: #d4a373;   /* Change to #61dafb for Blue */
     --link-color: #61dafb;
