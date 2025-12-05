@@ -94,66 +94,175 @@ li { margin-bottom: 8px; }
 /* --- COURSEWORK PAGE STYLES --- */
 
 /* Grid container for the course categories */
-.course-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two equal columns */
-    gap: 30px; /* Space between boxes */
-    margin-top: 20px;
+/* =========================================
+   1. Variables & Global Reset
+   ========================================= */
+:root {
+    --primary-color: #2c3e50;    /* Navy Blue */
+    --accent-color: #3498db;     /* Bright Blue */
+    --bg-color: #f4f7f6;         /* Light Gray Background */
+    --card-bg: #ffffff;          /* White Card Background */
+    --text-color: #333333;       /* Dark Gray Text */
+    --text-light: #666666;       /* Lighter Gray for metadata */
+    --border-radius: 8px;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 8px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* Individual Category Box */
-.course-category {
-    background-color: var(--bg-color); /* Uses the variable we defined earlier */
-    padding: 25px;
-    border: 1px solid #333;
-    border-radius: 8px; /* Rounded corners */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Category Title (e.g., "Mathematics") */
-.course-category h3 {
-    color: var(--accent-color);
-    margin-bottom: 15px;
-    font-size: 1.2rem;
-    border-bottom: 1px solid #444;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* =========================================
+   2. Layout Container
+   ========================================= */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.main-content {
+    background-color: transparent;
+}
+
+h2 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 2rem;
+    border-bottom: 2px solid var(--accent-color);
+    display: inline-block;
     padding-bottom: 5px;
 }
 
-/* The List of Classes */
+p {
+    margin-bottom: 30px;
+    color: var(--text-light);
+}
+
+/* =========================================
+   3. Navigation
+   ========================================= */
+.nav {
+    background-color: var(--card-bg);
+    padding: 15px 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 40px;
+    display: flex;
+    gap: 20px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav a:hover {
+    color: var(--accent-color);
+    background-color: rgba(52, 152, 219, 0.1);
+}
+
+.nav a.active {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+/* =========================================
+   4. Course Grid (Specific Request)
+   ========================================= */
+.course-grid {
+    display: grid;
+    /* Creates a responsive grid that fits as many columns as possible */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+    gap: 30px;
+    align-items: start; /* Prevents cards from stretching to match height of tallest neighbor */
+}
+
+/* Individual Course Category Cards */
+.course-category {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden; /* Ensures content doesn't spill out of rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid var(--accent-color); /* Colorful top accent */
+}
+
+.course-category:hover {
+    transform: translateY(-5px); /* Subtle lift effect */
+    box-shadow: var(--shadow-hover);
+}
+
+/* Category Header */
+.course-category h3 {
+    background-color: #fff;
+    color: var(--primary-color);
+    padding: 20px;
+    margin: 0;
+    font-size: 1.4rem;
+    border-bottom: 1px solid #eee;
+}
+
+/* Course List Styling */
 .course-list {
-    list-style: none; /* Remove default bullets */
+    list-style: none;
+    padding: 0;
     margin: 0;
 }
 
 .course-list li {
-    padding: 6px 0;
-    border-bottom: 1px solid #222; /* Faint line between classes */
+    padding: 12px 20px;
+    border-bottom: 1px solid #f0f0f0;
     font-size: 0.95rem;
     display: flex;
-    justify-content: space-between; /* Pushes grade/year to right if added */
+    align-items: center;
+    transition: background-color 0.2s ease;
 }
 
 .course-list li:last-child {
     border-bottom: none;
 }
 
-/* Highlight for Graduate Level courses (Optional) */
-.grad-course {
-    color: #fff;
-    font-weight: 600;
-}
-.grad-tag {
-    font-size: 0.7rem;
-    background: var(--accent-color);
-    color: #000;
-    padding: 2px 6px;
-    border-radius: 4px;
-    margin-left: 10px;
-    vertical-align: middle;
+.course-list li:hover {
+    background-color: #fafafa;
+    border-left: 3px solid var(--accent-color);
+    padding-left: 17px; /* Adjust padding to account for the border add */
 }
 
-/* Mobile: Stack columns vertically */
+/* Optional: Add a small bullet icon before text */
+.course-list li::before {
+    content: "•";
+    color: var(--accent-color);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -5px;
+}
+
+/* =========================================
+   5. Responsive Adjustments
+   ========================================= */
 @media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    
     .course-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Stack vertically on mobile */
     }
 }
