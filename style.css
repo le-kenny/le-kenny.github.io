@@ -90,3 +90,70 @@ li { margin-bottom: 8px; }
     .main-content { padding: 30px; }
     .nav { text-align: center; }
 }
+
+/* --- COURSEWORK PAGE STYLES --- */
+
+/* Grid container for the course categories */
+.course-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 30px; /* Space between boxes */
+    margin-top: 20px;
+}
+
+/* Individual Category Box */
+.course-category {
+    background-color: var(--card-bg); /* Uses the variable we defined earlier */
+    padding: 25px;
+    border: 1px solid #333;
+    border-radius: 8px; /* Rounded corners */
+}
+
+/* Category Title (e.g., "Mathematics") */
+.course-category h3 {
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #444;
+    padding-bottom: 5px;
+}
+
+/* The List of Classes */
+.course-list {
+    list-style: none; /* Remove default bullets */
+    margin: 0;
+}
+
+.course-list li {
+    padding: 6px 0;
+    border-bottom: 1px solid #222; /* Faint line between classes */
+    font-size: 0.95rem;
+    display: flex;
+    justify-content: space-between; /* Pushes grade/year to right if added */
+}
+
+.course-list li:last-child {
+    border-bottom: none;
+}
+
+/* Highlight for Graduate Level courses (Optional) */
+.grad-course {
+    color: #fff;
+    font-weight: 600;
+}
+.grad-tag {
+    font-size: 0.7rem;
+    background: var(--accent-color);
+    color: #000;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+/* Mobile: Stack columns vertically */
+@media (max-width: 768px) {
+    .course-grid {
+        grid-template-columns: 1fr;
+    }
+}
