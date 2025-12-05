@@ -264,8 +264,9 @@ body {
 }
 
 .pill-misc {
-  border-color: var(--accent); /* also purple-family */
+  border-color: var(--text-main); /* also purple-family */
 }
+
 
 /* Sections */
 
@@ -382,7 +383,7 @@ body {
 }
 
 .summary-misc {
-  border-color: var(--border-subtle); /* neutral */
+  border-color: var(--text-main); /* neutral */
 }
 
 /* Tabs */
