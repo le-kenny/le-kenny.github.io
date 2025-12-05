@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Your Name – Undergraduate Progress</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">YN</span>
+        <span class="brand-text">Your Name</span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="research.html" class="nav-link">Research</a>
+        <a href="undergraduate.html" class="nav-link active">Undergraduate</a>
+        <a href="cv.html" class="nav-link">CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <section class="page-header-section">
+      <div class="container narrow">
+        <p class="hero-kicker">Undergraduate Studies</p>
+        <h1>Degree Progress</h1>
+        <p class="page-intro">
+          Academic Calendar <strong>2024 – 2028</strong>.  
+          Courses are organized into four main tracks: <span class="pill pill-math">Math</span>,
+          <span class="pill pill-physics">Physics</span>,
+          <span class="pill pill-ee">EE</span>, and
+          <span class="pill pill-misc">Miscellaneous</span>.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="progress-summary-grid">
+          <div class="summary-card summary-math">
+            <h2>Math</h2>
+            <p class="summary-count">14 planned courses</p>
+            <p>Calculus, linear algebra, differential equations, advanced analysis, and geometry.</p>
+          </div>
+          <div class="summary-card summary-physics">
+            <h2>Physics</h2>
+            <p class="summary-count">8 planned courses</p>
+            <p>Core physics sequence, modern physics, thermodynamics, and quantum mechanics.</p>
+          </div>
+          <div class="summary-card summary-ee">
+            <h2>Electrical Engineering</h2>
+            <p class="summary-count">22 planned courses</p>
+            <p>Circuits, signals, electromagnetics, communications, microprocessors, and control.</p>
+          </div>
+          <div class="summary-card summary-misc">
+            <h2>Miscellaneous</h2>
+            <p class="summary-count">10 planned courses</p>
+            <p>Computer science, economics, writing, literature, biology, statics, and arts.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="tab-header">
+          <h2 class="section-title">Coursework by Track</h2>
+          <div class="tabs">
+            <button class="tab-button active" data-tab="tab-math">Math</button>
+            <button class="tab-button" data-tab="tab-physics">Physics</button>
+            <button class="tab-button" data-tab="tab-ee">EE</button>
+            <button class="tab-button" data-tab="tab-misc">Miscellaneous</button>
+          </div>
+        </div>
+
+        <!-- Math Tab -->
+        <div id="tab-math" class="tab-content active">
+          <h3 class="tab-title">Math Track</h3>
+          <div class="timeline">
+
+            <div class="term-block">
+              <h4>Fall I (2024)</h4>
+              <ul>
+                <li><strong>MATH 301</strong> – Calculus II</li>
+              </ul>
+            </div>
+
+            <div class="term-block">
+              <h4>Spring I (2025)</h4>
+              <ul>
+                <li><strong>MATH 302</strong> – Calculus III</li>
+                <li><strong>MATH 362</strong> – Elementary Linear Algebra</li>
+              </ul>
+            </div>
+
+            <div class="term-block">
+              <h4>Fall II (2025)</h4>
+              <ul>
+                <li><strong>MATH 350</strong> – Differential Equations</li>
+              </ul>
+            </div>
+
+            <div class="term-block">
+              <h4>Spring II (2026)</h4>
+              <ul>
+                <li><strong>MATH 360</strong> – Fundamentals of Mathematics</li>
+                <li><strong>MATH 475</strong> – Complex Variables</li>
+              </ul>
+            </div>
+
+            <div class="term-block">
+              <h4>Fall III (2026)</h4>
+              <ul>
+                <li><strong>MATH 462</strong> – Linear Algebra</li>
+                <li><strong>STAT 425</strong> – Probability Theory</li>
+              </ul>
+            </div>
+
+            <div class="term-block">
+              <h4>Spring III (2027)</h4>
+              <ul>
+                <li><strong>MATH 497</strong> – Differential Geometry I</li>
+              </ul>
+            </div>
+
+            <div class="term-block">
+              <h4>Fall IV (2027)</h4>
+              <ul>
+                <li><strong>MATH 465</strong> – Modern Algebra I</li>
+                <li><strong>MATH 493</strong> – Advanced Calculus I</li>
+                <li><strong>MATH 495</strong> – Advanced Mathematics for Engineers and Scientists</li>
+              </ul>
+            </div>
+
+            <div class="term-block">
+              <h4>Spring IV (2028)</h4>
+              <ul>
+                <li><strong>MATH 494</strong> – Advanced Calculus II</li>
+                <li><strong>MATH 498</strong> – Differential Geometry II</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Physics Tab -->
+        <div id="tab-physics" class="tab-content">
+          <h3 class="tab-title">Physics Track</h3>
+          <div class="timeline">
+
+            <div class="term-block">
+              <h4>Spring I (2025)</h4>
+              <ul>
+                <li><strong>PHYS 201</strong> – General Physics I</li>
+              </ul>
+            </div>
+
+            <div class="term-block">
+              <h4>Fall II (2025)</h4>
+              <ul>
+                <li><strong>PHYS 202</strong> – General Physics II</li>
+              </ul>
+            </div>
+
+            <div class="term-block">
+              <h4>Summer I (2026)</h4>
+              <ul>
+                <li><strong>PHYS 215</strong> – Physics Laboratory I</li>
+              </ul>
+            </div>
+
+            <div class="term-block">
+              <h4>Fall III (2026)</h4>
+              <ul>
+                <li><strong>PHYS 303</strong> – Modern Physics I</li>
+              </ul>
+            </div>
+
+            <div class="term-block">
+              <h4>Spring III (2027)</h4>
+              <ul>
+                <li><strong>PHYS 405</strong> – Thermodynamics</li>
+              </ul>
+            </div>
+
+            <div class="term-block">
+              <h4>Summer II (2027)</h4>
+              <ul>
+                <li><strong>PHYS 216</strong> – Physics Laboratory II</li>
+              </ul>
+            </div>
+
+            <div class="term-block">
+              <h4>Fall IV (2027)</h4>
+              <ul>
+                <li><strong>PHYS 437</strong> – Quantum Mechanics I</li>
+              </ul>
+            </div>
+
+            <div class="term-block">
+              <h4>Spring IV (2028)</h4>
+              <ul>
+                <li><strong>PHYS 438</strong> – Quantum Mechanics II</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- EE Tab -->
+        <div id="tab-ee" class="tab-content">
+          <h3 class="tab-title">Electrical Engineering Track</h3>
+          <div class="timeline">
+
+            <div class="term-block">
+              <h4>Fall I (2024)</h4>
+              <ul>
+                <li><strong>EECE 140</strong> – Computer Engineering</li>
+              </ul>
+            </div>
+
+            <div class="term-block">
+              <h4>Fall II (2025)</h4>
+              <ul>
+                <li><strong>EECE 233</strong> – Telecommunications I</li>
+                <li><strong>EECE 240</strong> – Digital Systems</li>
+                <li><strong>EECE 355</strong> – Circuits and Signals I</li>
+              </ul>
+            </div>
+
+            <div class="term-block">
+              <h4>Spring II (2026)</h4>
+              <ul>
+                <li><strong>EECE 260</strong> – Computational Methods in Electrical Engineering</li>
+                <li><strong>EECE 344</strong> – Engineering Electromagnetics</li>
+                <li><strong>EECE 356</strong> – Circuits and Signals II</li>
+                <li><strong>EECE 380</strong> – Random Processes</li>
+              </ul>
+            </div>
+
+            <div class="term-block">
+              <h4>Summer I (2026)</h4>
+              <ul>
+                <li><strong>EECE 452</strong> – Communications Engineering I</li>
+              </ul>
+            </div>
+
+            <div class="term-block">
+              <h4>Fall III (2026)</h4>
+              <ul>
+                <li><strong>EECE 335</strong> – Physical Electronics I</li>
+                <li><strong>EECE 340</strong> – Microprocessors</li>
+                <li><strong>ECEE 444</strong> – Circuits and Signals III</li>
+              </ul>
+            </div>
+
+            <div class="term-block">
+              <h4>Spring III (2027)</h4>
+              <ul>
+                <li><strong>EECE 342</strong> – Microprocessors Lab</li>
+                <li><strong>EECE 353</strong> – Electronics Circuits</li>
+                <li><strong>EECE 447</strong> – Electrical Machines and Power</li>
+                <li><strong>EECE 458</strong> – Communications Engineering II</li>
+              </ul>
+            </div>
+
+            <div class="term-block">
+              <h4>Fall IV (2027)</h4>
+              <ul>
+                <li><strong>EECE 430</strong> – Digital Signal Processing</li>
+                <li><strong>EECE 443</strong> – Design Lab I</li>
+              </ul>
+            </div>
+
+            <div class="term-block">
+              <h4>Spring IV (2028)</h4>
+              <ul>
+                <li><strong>EECE 423</strong> – Seminar I</li>
+                <li><strong>EECE 453</strong> – Communications Engineering Lab</li>
+                <li><strong>EECE 460</strong> – Design Lab II</li>
+                <li><strong>EECE 461</strong> – Control Systems</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Misc Tab -->
+        <div id="tab-misc" class="tab-content">
+          <h3 class="tab-title">Miscellaneous Track</h3>
+          <div class="timeline">
+
+            <div class="term-block">
+              <h4>Fall I (2024)</h4>
+              <ul>
+                <li><strong>CMPS 150</strong> – Introduction to Computer Science</li>
+                <li><strong>BIOL 121</strong> – Biological Principles and Issues I</li>
+                <li><strong>VIAR 122</strong> – Survey of the Visual Arts II</li>
+              </ul>
+            </div>
+
+            <div class="term-block">
+              <h4>Spring I (2025)</h4>
+              <ul>
+                <li><strong>CMPS 260</strong> – Introduction to Data Structures and Software Design</li>
+                <li><strong>ECON 201</strong> – Principles of Macroeconomics</li>
+              </ul>
+            </div>
+
+            <div class="term-block">
+              <h4>Fall II (2025)</h4>
+              <ul>
+                <li><strong>CMPS 261</strong> – Advanced Data Structures and Software Engineering</li>
+              </ul>
+            </div>
+
+            <div class="term-block">
+              <h4>Summer I (2026)</h4>
+              <ul>
+                <li><strong>ECON 430</strong> – Industrial Economics and Finance</li>
+              </ul>
+            </div>
+
+            <div class="term-block">
+              <h4>Spring III (2027)</h4>
+              <ul>
+                <li><strong>ENGL 365</strong> – Technical Writing</li>
+              </ul>
+            </div>
+
+            <div class="term-block">
+              <h4>Summer II (2027)</h4>
+              <ul>
+                <li><strong>ENGR 218</strong> – Statics and Strength of Materials</li>
+                <li><strong>ENGL 206</strong> – American Literature since 1865</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Your Name. All rights reserved.</p>
+      <p class="footer-meta">Built for GitHub Pages.</p>
+    </div>
+  </footer>
+</body>
+</html>
