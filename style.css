@@ -1,126 +1,213 @@
-<style>
-    /* General Reset and Font */
-    * {
-        box-sizing: border-box;
-    }
+/* =========================================
+   1. Variables & Global Reset
+   ========================================= */
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #3498db;
+    --bg-color: #f4f7f6;
+    --card-bg: #ffffff;
+    --text-color: #333333;
+    --text-light: #666666;
+    --border-radius: 8px;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-    body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        background-color: #f4f4f4; /* Darker bg to make the widget pop like the screenshot */
-        margin: 0;
-        padding: 20px;
-        color: #333;
-    }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-    /* Container to simulate mobile view */
-    .resume-container {
-        max-width: 400px;
-        background: #fff;
-        margin: 0 auto;
-        padding: 20px;
-        border-radius: 8px; /* Optional rounded corners */
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.5; /* Slightly tighter line height */
+}
 
-    /* Title Styling */
-    .page-title {
-        color: #8ed1fc; /* Light Blue similar to screenshot */
-        font-weight: 900;
-        font-size: 42px;
-        margin-top: 0;
-        margin-bottom: 20px;
-    }
+/* =========================================
+   2. Layout Container
+   ========================================= */
+.container {
+    /* Made wider to fit 5 columns comfortably */
+    max-width: 1600px; 
+    margin: 0 auto;
+    padding: 20px;
+}
 
-    /* Tab Navigation */
-    .tabs {
+h2 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(--accent-color);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+p { margin-bottom: 30px; color: var(--text-light); }
+
+/* =========================================
+   3. Navigation
+   ========================================= */
+.nav {
+    background-color: var(--card-bg);
+    padding: 15px 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 30px;
+    display: flex;
+    gap: 20px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.nav a:hover { color: var(--accent-color); background-color: rgba(52, 152, 219, 0.1); }
+.nav a.active { background-color: var(--accent-color); color: white; }
+
+/* =========================================
+   4. The 5-Column Grid Layout
+   ========================================= */
+.course-grid {
+    display: grid;
+    /* This creates exactly 5 equal columns */
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 15px; /* Tighter gap to save horizontal space */
+    align-items: start;
+}
+
+.course-category {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    border-top: 4px solid var(--accent-color);
+    /* Ensure height fits content */
+    height: 100%; 
+}
+
+/* Header for each list */
+.course-category h3 {
+    background-color: #fff;
+    color: var(--primary-color);
+    padding: 15px;
+    margin: 0;
+    font-size: 1.1rem; /* Smaller font to fit header */
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    white-space: nowrap; /* Prevents header breaking line if possible */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* The List Items */
+.course-list { list-style: none; }
+
+.course-list li {
+    padding: 10px 12px; /* Compact padding */
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.85rem; /* Smaller text to fit narrow columns */
+    line-height: 1.4;
+    color: #444;
+}
+
+.course-list li:last-child { border-bottom: none; }
+
+.course-list li:hover {
+    background-color: #fafafa;
+    color: var(--accent-color);
+}
+
+/* =========================================
+   5. Responsive Fallback
+   ========================================= */
+/* Since 5 columns is very tight on tablets/phones,
+   we stack them when the screen gets too small.
+*/
+
+/* 1. The Container: Forces the 5 columns */
+.course-grid {
+    display: grid;
+    /* This command strictly enforces 5 equal columns side-by-side */
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 20px; /* Space between the cards */
+    width: 100%;
+    align-items: start; /* Aligns cards to the top */
+}
+
+/* 2. The Card Style (Matches your screenshot) */
+.course-category {
+    background: #ffffff;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* Soft shadow */
+    border-top: 5px solid #5c9cea; /* The Blue Top Border */
+    overflow: hidden;
+    height: 100%; /* Makes all cards the same height if desired */
+}
+
+/* 3. The Header "Mathematics", "Physics", etc. */
+.course-category h3 {
+    color: #2c3e50;
+    padding: 20px;
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    border-bottom: 1px solid #eee; /* Faint line under title */
+}
+
+/* 4. The List Items */
+.course-list {
+    list-style: none; /* Remove default bullets */
+    padding: 0;
+    margin: 0;
+}
+
+.course-list li {
+    padding: 12px 20px;
+    border-bottom: 1px solid #f0f0f0; /* The separator lines */
+    color: #444;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+/* 5. The Blue Dot (Bullet point) */
+.course-list li::before {
+    content: "•";
+    color: #5c9cea; /* Match the blue top border */
+    font-weight: bold;
+    margin-right: 10px;
+    font-size: 1.2em;
+    line-height: 1; /* Fixes vertical alignment of dot */
+}
+
+.course-list li:last-child {
+    border-bottom: none; /* Remove border from the very last item */
+}
+
+/* --- RESPONSIVE HANDLER --- */
+/* IMPORTANT: On small screens (tablets/phones), 5 columns will look bad.
+   This forces it to scroll sideways instead of stacking, 
+   keeping your "horizontal" requirement. */
+@media (max-width: 1200px) {
+    .course-grid {
         display: flex;
-        justify-content: space-between;
-        border-bottom: 1px solid #eee;
-        margin-bottom: 25px;
+        overflow-x: auto; /* Adds a horizontal scrollbar */
+        padding-bottom: 20px; /* Space for the scrollbar */
     }
+    .course-category {
+        min-width: 300px; /* Ensures cards don't get squashed */
+    }
+}
+@media (max-width: 1024px) {
+    .course-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on tablets */
+    }
+}
 
-    .tab-link {
-        text-decoration: none;
-        color: #888;
-        font-size: 11px;
-        font-weight: 700;
-        text-transform: uppercase;
-        padding-bottom: 10px;
-        border-bottom: 3px solid transparent;
-        transition: all 0.3s ease;
+@media (max-width: 768px) {
+    .course-grid {
+        grid-template-columns: 1fr; /* 1 column on phones */
     }
-
-    .tab-link.active {
-        color: #8ed1fc;
-        border-bottom-color: #8ed1fc;
-    }
-
-    /* Stats Section */
-    .stats-section {
-        margin-bottom: 30px;
-    }
-
-    .stat-row {
-        font-size: 28px;
-        margin-bottom: 8px;
-        color: #555;
-    }
-
-    .stat-value {
-        font-weight: 800;
-        color: #333;
-        margin-left: 5px;
-    }
-
-    /* Accordion Styling */
-    .accordion-list {
-        border-top: 1px solid #eee;
-    }
-
-    details {
-        border-bottom: 1px solid #eee;
-    }
-
-    summary {
-        padding: 20px 0;
-        font-size: 16px;
-        font-weight: 400;
-        color: #333;
-        cursor: pointer;
-        list-style: none; /* Hides default triangle */
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    /* Hiding default triangle for Chrome/Safari */
-    summary::-webkit-details-marker {
-        display: none;
-    }
-
-    /* Creating the custom Blue Arrow */
-    summary::after {
-        content: '';
-        display: inline-block;
-        width: 8px;
-        height: 8px;
-        border-bottom: 2px solid #8ed1fc; /* The Blue Color */
-        border-right: 2px solid #8ed1fc;
-        transform: rotate(45deg); /* Makes it point down */
-        margin-right: 10px;
-        transition: transform 0.2s ease;
-    }
-
-    /* Rotate arrow when open */
-    details[open] summary::after {
-        transform: rotate(225deg); /* Points up when open */
-        margin-bottom: -5px; 
-    }
-
-    /* The content inside the dropdown */
-    .details-content {
-        padding-bottom: 20px;
-        color: #666;
-        font-size: 14px;
-    }
-</style>
+}
